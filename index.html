@@ -3,21 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Kòd Verifikasyon Monetag -->
-    <meta name="monetag" content="7ae79315210d23e6c9edcb0ddabd1629">
     <title>Mini App Monetag</title>
+
+    <!-- 1. CHAJÈ SDK A -->
+    <script src="//lib.monetag.com/script/inapp.js" data-zone="11164645" async></script>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f9; padding: 40px 20px; margin: 0;">
+<body style="font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f9; padding: 40px 20px;">
 
     <div style="max-width: 400px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <h1 style="color: #333333; font-size: 22px; margin-bottom: 10px;">Byenveni nan Aplikasyon an!</h1>
-        <p style="color: #666666; font-size: 15px; line-height: 1.5; margin-bottom: 25px;">Klike sou bouton anba a pou w kòmanse epi debloke kontni an:</p>
+        <h1>Byenveni!</h1>
+        <p>Gade yon piblisite pou w jwenn aksè:</p>
         
-        <!-- BOUTON KI GEN DIRECT LINK MONETAG OU AN -->
-        <a href="https://omg10.com/4/11585101" target="_blank" style="display: inline-block; width: 100%; padding: 15px 0; background-color: #0088cc; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: bold; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,136,204,0.3); box-sizing: border-box;">
-            Kòmanse Kounye A
-        </a>
+        <!-- BOUTON KI PRAL DEKLANCHE PIBLISITE REWARDED LA -->
+        <button id="reward-btn" style="width: 100%; padding: 15px; background-color: #0088cc; color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: bold;">
+            Gade piblisite a
+        </button>
     </div>
 
+    <!-- 2. KONFIGIRASYON REWARDED -->
+    <script>
+        // Tann pou SDK a fin chaje
+        window.addEventListener('load', function() {
+            const btn = document.getElementById('reward-btn');
+            
+            btn.addEventListener('click', function() {
+                if (typeof show_11164645 === 'function') {
+                    show_11164645({
+                        type: 'rewarded',
+                        inAppSettings: {
+                            frequency: 2,
+                            capping: 0.1,
+                            interval: 30,
+                            timeout: 5,
+                            everyPage: false
+                        }
+                    });
+                } else {
+                    alert("Piblisite a poko pare, tanpri tann 5 segonn.");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
