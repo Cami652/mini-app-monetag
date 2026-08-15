@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini App Monetag</title>
+
+    <!-- Monetag In-App Interstitial SDK Script -->
+    <script src="//lib.monetag.com/script/inapp.js" data-zone="11164645"></script>
+
+    <!-- Konfigirasyon SDK Monetag -->
+    <script>
+      show_11164645({
+        type: 'inApp',
+        inAppSettings: {
+          frequency: 2,
+          capping: 0.1,
+          interval: 30,
+          timeout: 5,
+          everyPage: false
+        }
+      });
+    </script>
+</head>
+<body>
+
+    <div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;">
+        <h1>Byenveni nan Aplikasyon an!</h1>
+        <p>Aplikasyon an ap chaje, tanpri tann kèk segonn...</p>
+    </div>
+
+</body>
+</html>
